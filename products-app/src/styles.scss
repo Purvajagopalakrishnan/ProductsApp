@@ -1,0 +1,25 @@
+html, body {
+    margin: 0;
+    height: 100%;
+  }
+  
+  .link {
+      color: #007bff !important;
+      cursor: pointer;
+  }
+  
+  // mat-table header properties
+  .mat-header-cell {
+    color: black;
+    font-size: 18px;
+  }
+  
+  // grey color for mat-icon like edit, delete
+  .mat-icon {
+    color: #A9A9A9;
+  }
+  
+  // hover property for mat-icons
+  mat-icon:hover {
+    cursor: pointer;
+  }

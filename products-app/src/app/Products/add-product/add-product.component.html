@@ -1,0 +1,56 @@
+<div class="row mt-4 justify-content-start">
+    <div class="col">
+        <h3 class="title title-text">{{title}}</h3>
+    </div>
+</div>
+<form [formGroup]="productForm" (submit)="onSave()">
+    <div class="row mt-4 justify-content-end">
+        <div class="col-md-6 align-button">
+            <button *ngIf="mode === 'add'" type="submit"  mat-flat-button color="accent" class="ml-2 text-uppercase" [disabled]="productForm.invalid">ADD</button>
+            <button *ngIf="mode === 'edit'"  type="submit"  mat-flat-button color="accent" class="ml-2 text-uppercase"
+                [disabled]="productForm.invalid || productForm.pristine">Update</button>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12 col-lg-6">
+            <mat-card>
+                <mat-card-title class="card-title">Product Information</mat-card-title>
+                <mat-card-content>
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field class="w-100">
+                                <input formControlName="name"  matInput placeholder="Product Name" required>
+                                <mat-error *ngIf="productForm.get('name').invalid">Product Name is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col">
+                            <mat-form-field class="w-100">
+                                <input formControlName="price" matInput placeholder="Price" required>
+                                <mat-error *ngIf="productForm.get('price').invalid">Product price is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <mat-form-field class="w-100">
+                                <input formControlName="description" matInput placeholder="Description">
+                            </mat-form-field>
+                        </div>
+                        <div class="col">
+                            <mat-form-field class="w-100">
+                                <input formControlName="quantity" matInput
+                                    placeholder="Quantity">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    
+                    <div class="row my-5">
+                        <div class="col">
+                            <mat-divider inset="true"></mat-divider>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</form>

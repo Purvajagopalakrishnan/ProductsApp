@@ -1,0 +1,18 @@
+table {
+    width: 100%;
+}
+  
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+:host ::ng-deep .mat-cell {
+  font-size: 13px;
+}
+
+@media only screen and (max-width:960px) {
+  .data {
+      overflow: auto;
+  }
+}
