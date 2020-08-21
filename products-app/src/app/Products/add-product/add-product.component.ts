@@ -18,7 +18,7 @@ export class AddProductComponent implements OnInit {
   productResult: Observable<IResultString>;
   productForm: FormGroup;
   content: string;
-  title: string;
+  title = 'Add/Edit Product';
   mode: string;
   productData: IProduct;
   productAddUpdateData: IResultString;
@@ -35,7 +35,6 @@ export class AddProductComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe((data) => {
-      this.title = data.title;
       this.mode = data.mode;
     });
     if (this.mode === 'edit') {
@@ -73,7 +72,7 @@ export class AddProductComponent implements OnInit {
       this.productAddUpdateData = data;
       if (this.productAddUpdateData.message === 'Success') {
         this.snackBar.open(this.snackBarString, 'DISMISS');
-        this.router.navigate(['/client']);
+        this.router.navigate(['/productlist']);
       }
     }, error => {
       this.snackBar.open('Please try again', 'DISMISS');
